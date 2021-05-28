@@ -27,7 +27,7 @@ Update *layer0.config.js*, *package.json*, *shoppingFlowRouteHandler.ts* with yo
 ### Step 2)
 Next we need to configure the caching in our newly created project. To do so, add a route for each URL you want to cache to the *routes.ts*
 
-Refer to the guides on [Routing](https://docs.layer0.co/guides/routingg) and [Caching](https://docs.layer0.co/guides/caching) for the full syntax to use in your *routes.js* file.
+Refer to the guides on [Routing](https://docs.layer0.co/guides/routing) and [Caching](https://docs.layer0.co/guides/caching) for the full syntax to use in your *routes.js* file.
 
 You should be able to run your project using:
 ```
