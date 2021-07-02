@@ -27,6 +27,16 @@ Note: This guide assumes that you’re using a Mac. Please let us know if you’
 13. Add your code to a github repo and share with the following gh handles (patricksaw, howdiz, letrest)
 14. Deploy your project to https://app.layer0.co 
 Write up what you’ve intended to accomplish, what you’d do as next steps if you had more time and any feedback you may have for layer0 regarding the process. Add those to the GH Readme. (20 mins)
+15. **Write up what you’ve intended to accomplish, what you’d do as next steps if you had more time and any feedback you may have for layer0 regarding the process. Add those to the GH Readme:**
+
+    * Adding the PDP to the Router was a one-line task. Super easy.
+    * Attempted to remove the setTimeout in `browser.ts` file (it was generating errors). I failed but it's ok :)
+    * My next steps would be:
+        * In the `routes.ts` file, move the route match functions/callbacks to its own file(s). Because for very large sites this file would be huge. Also they can be reused (see `/static/:path*`, `/assets/:path*`, `/api/:path*` use the same function). Plus it's cleaner to have one `match(...)` per line: easy to spot which one to touch.
+        * In the `browser.ts` file, I didn't like to see the `setTimeout` there. From the documentation (where the setTimeout is not used in the example), I thought that internally the `install` function would be using a MutationObserver, which is better than waiting until the entire DOM has loaded. Also, 1000ms wait is too much time.
+    * Some feedback:
+        * Although the preload strategy is a simple concept, I'd like to know if there's more about how the prediction happens in layer0 (besides links/hover content/routes) and, how the cache is split and delivered by chunks (bottlenecks can be faced in the delivery, right?). Also, are you already thinking in a way to cache 'lazy loaded' content? The prefetching based on element visibility seems like the workaround, though.
+        * Finally, thanks: it feels good to know something new, and no matter the outcome of the process, I'll keep learning from your docs in the next days.
 
 ### Part 2 - Performance Comparison (30 - 45 minutes)
 Run [WebPageTests](https://www.webpagetest.org/) with the following settings under Advanced Settings > Test Settings:
